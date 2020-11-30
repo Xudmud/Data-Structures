@@ -1,2 +1,3 @@
 # Data-Structures
-Assignment code for Data Structures and Program Design
+Assignment code and projects for Data Structures and Program Design, Fall 2017
+
