@@ -1,0 +1,112 @@
+/-------------------------------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  Final Project
+|  Due Date  :  1 December, 2017
+\-------------------------------------------------------------------------------
+
+			Readme
+
+
+/-------------------------------------------------------------------------------
+|	Description of the program
+\-------------------------------------------------------------------------------
+
+	Final Project. Creates binary search trees to hold Actor and Picture objects
+	read in from a file, and can search, sort, add/delete/modify entries, and
+	print either the trees or search results to a file.
+
+/-------------------------------------------------------------------------------
+|	Source Files
+\-------------------------------------------------------------------------------
+
+	
+	BSTreeActor.h
+		Contains the member variables and functions for a binary search tree of
+		Actor nodes.  Functions include searching, reading in input, and
+		printing.
+
+	BSTreeActor.cpp
+		Contains the implementations of the member functions in BSTreeActor.h
+	
+	NodeActor.h
+		Contains the member variables and functions for a node of type Actor in
+		a binary search tree.
+
+	ActorActress.h
+		Contains the member variables and constructor for an Actor object,
+		overloaded equality operator, and search functions.
+
+	ActorActress.cpp
+		Contains the implementations for the equality operator and search
+		functions.
+
+	ActorFunctions.h
+		Contains the functions used when working with Actor objects. These
+		functions may not necessarily need access to all the member data of
+		NodeActor or BSTreeActor.
+
+	ActorFunctions.cpp
+		Contains the implementations of the functions in ActorFunctions.h
+
+	BSTreePicture.h
+		Contains the member variables and functions for a binary search tree of
+		Picture nodes.
+
+	BSTreePicture.cpp
+		Contains the implementations of the functions in BSTreePicture.cpp
+
+	NodePicture.h
+		Contains the member variables and functions for a node of type Picture
+		in a binary search tree
+
+	Picture.h
+		Contains the member variables and constructor for a Picture object,
+		overloaded equality operator, and search functions.
+
+	Picture.cpp
+		Contains the implementations for the equality operator and search
+		functions.
+
+	PictureFunctions.h
+		Contains the functions used when working with Picture objects.
+
+	PictureFunctions.cpp
+		Contains the implementations of the functions in PictureFunctions.h
+
+	MenuFunctions.h
+		Contains the functions for most of the menus used by the program.
+
+	MenuFunctions.cpp
+		Contains the implementations for the functions in MenuFunctions.h
+
+	main.cpp
+		Main program file, calls the main menu to run the program.
+
+/-------------------------------------------------------------------------------
+|	Program Status
+\-------------------------------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/-------------------------------------------------------------------------------
+|	Instructions
+\-------------------------------------------------------------------------------
+	
+	Unzip the WicklundFinalProject.zip folder
+		$ unzip WicklundFinalProject.zip
+
+	cd into the program directory
+		$ cd WicklundFinalProject
+
+	Run make to compile the program
+		$ make
+
+	Run the compiled program
+		$ ./WicklundFinalProject

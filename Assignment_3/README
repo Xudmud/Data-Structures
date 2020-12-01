@@ -1,0 +1,89 @@
+/------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  3
+|  Due Date  :  14 September, 2017
+\-----------------------------------------------------
+
+			Readme
+
+
+/-----------------------------------------------------
+|	Description of the program
+\-----------------------------------------------------
+
+Program reads vehicle data from a file vehiclein.txt, creating
+a vector of Vehicle objects with make, model, and year.
+
+Program prompts the user for searching either by make, model, or year.
+
+Program will sort the objects based on what is being searched, then prompt
+for input. Finally, it will ask if the search should be recursive or iterative.
+
+Program will then perform either a recursive or iterative search for the given search
+term.  It will print the first result found, or indicate that there were no results found.
+
+
+/------------------------------------------------------
+|	Source Files
+\------------------------------------------------------
+
+Vehicle.h
+	Header file for the Vehicle class.
+Vehicle.cpp
+	Implementation file for functions in Vehicle class. Contains the constructors for Vehicle objects, 
+	member function declarations for comparing the values between the vector objects, and an
+	overloaded output operator to print an object of type Vehicle.
+Recursive.h
+	Header file for the Recursive class.
+Recursive.cpp
+	Implementation file for functions in Recursive class. Contains overloaded functions for finding
+	a specific vehicle model, make, or year; either recursively or iteratively. In both cases, the
+	first instance of a match will return the index of that result.
+main.cpp
+	Main program file. Contains functions to read from the input file and create the vector of vehicles.
+	Contains functions for sorting and searching based on user input, and printing the result using
+	the overloaded output operator.
+
+/------------------------------------------------------
+|	Program Status
+\------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/------------------------------------------------------
+|	Instructions
+\------------------------------------------------------
+	
+Unaip the WicklundHW3.zip file.
+	$ unzip WicklundHW3.zip
+
+cd into the extracted directory.
+	$ cd WicklundHW3
+
+Make sure vehiclein.txt is in the same folder as the source files.
+
+Run the makefile.
+	$ make
+
+Run the program
+	$ ./vehicles
+	
+
+/------------------------------------------------------
+|	Other Thoughts and Notes
+\------------------------------------------------------
+
+I was reminded through this homework not to indclude a header
+file in a friend class, since the friend declration implies
+inclusion.
+
+I saw the instructor response that we should be using the .compare function
+for string comparison. I was able to use simple < and > comparisons on strings to
+compare, since they're using the string library and not c-strings

@@ -1,0 +1,81 @@
+/------------------------------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  9
+|  Due Date  :  9 November, 2017
+\------------------------------------------------------------------------------
+
+			Readme
+
+
+/------------------------------------------------------------------------------
+|	Description of the program
+\------------------------------------------------------------------------------
+
+	Basic spell checker program. Will read in a given dictionary file,
+	build a hash table with 1373 buckets, and then use that hash table to
+	spell check a given text file. This text file has all punctuation (save for
+	apostrophes) stripped and all words converted to lowercase before being
+	checked. 
+	The list of misspelled words, along with a count of the words in the
+	dictionary and input text file, and the number of misspelled words are
+	output to a results_<inputFilename> text file.  The file may or may not end
+	in .txt	depending on the input filename (since Linux/Unix doesn't really
+	care about extensions, at least for text-based files).
+
+/------------------------------------------------------------------------------
+|	Source Files
+\------------------------------------------------------------------------------
+
+	hash.h
+		Contains the variables and member function declarations for the hash 
+		object. Creates a hash table of 1373 entries. Functions include adding
+		to the hash and	checking the spelling of a word.
+
+	hash.cpp
+		Contains the implementations for the hash member functions.
+
+	functions.h
+		Contains the function declarations for generating a hash, stripping
+		punctuation, and converting to lowercase. These are separate from the
+		hash class since they get called both when geneating the hash and
+		checking against it.
+
+	functions.cpp
+		Contains the implementations for the functions in functions.h
+
+	main.cpp
+		Main program file.
+
+
+
+/------------------------------------------------------------------------------
+|	Program Status
+\------------------------------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	IDE used: Microsoft Visual Studio 2017
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		(could not test against csegrid due to it being down)
+
+/------------------------------------------------------------------------------
+|	Instructions
+\------------------------------------------------------------------------------
+	
+	(I was only able to test these in a local Linux shell, but they should still
+	work on the csegrid)
+
+	Unzip the WicklundHW9.zip file
+		$ unzip WicklundHW9.zip
+
+	cd into the WicklundHW9 directory
+		$ cd WicklundHW9
+
+	Run make with the given makefile
+		$ make
+
+	Run the hash program
+		$ ./wicklund_hash

@@ -1,0 +1,163 @@
+/------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  1
+|  Due Date  :  31 August, 2017
+\------------------------------------------------------
+
+			Readme
+
+
+/------------------------------------------------------
+|	Description of the program
+\------------------------------------------------------
+
+Program will create objects of type ArrayBag with integers read in from
+the file setInput.txt.  Then the program will combine the two ArrayBags
+into a single one while removing duplicate integers, using an overloaded
++ operator; and remove the elements in the second ArrayBag from the first
+ArrayBag, using an overloaded - operator. Finally, the program will print
+the contents of the two ArrayBags, along with the results of the + and -
+operators.
+
+If there is no setInput.txt file, the program will indicate this and give
+a return code of 1.
+
+If an input is detected in setInput.txt, the program will indicate this and
+give a return code of 2.
+
+
+/------------------------------------------------------
+|	Source Files
+\------------------------------------------------------
+
+Name:	main.cpp
+	Main program. Creates ArrayBag objects and runs the + and - operators.
+
+Name:	guess.h
+	Contains the definition for the ArrayBag class and its friend and member
+	functions.
+
+Name:	guess.cpp
+	Implements the ArrayBag class and its friend and member functions.
+
+/------------------------------------------------------
+|	Program Status
+\------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/------------------------------------------------------
+|	Instructions
+\------------------------------------------------------
+	
+	Unzip the file WicklundHW2.zip
+	$ unzip WicklundHW2.zip
+	
+	cd into the WicklundHW2 directory
+	run make
+	$ cd WicklundHW2.zip
+	$ make
+
+	Run the ArrayBag program
+
+	$ ./hw2.wicklund
+	
+/------------------------------------------------------
+|	Functions and Variables
+\------------------------------------------------------
+
+(ItemType is used to represent an int)
+
+private:
+	static const int DEFAULT_BAG_SIZE
+		Sets the maximum size of an ArrayBag.
+
+	ItemType items[DEFAULT_BAG_SIZE]
+		Creates the array to store the ints of an ArrayBag.
+
+	int itemCount
+		Holds the current size of the bag, akin to size() on a vector.
+
+	int maxItems
+		The maximum number of items an ArrayBag can contain.
+
+private:
+	ArrayBag()
+		Default constructor. Sets itemCount to 0 and maxItems to DEFAULT_BAG_SIZE
+
+	int ArrayBag::getCurrentSize()
+		Returns the size of the bag, itemCount.
+
+	bool ArrayBag::addItems(std::stringstream& ss,ArrayBag& bag)
+		Takes the input stream from main.cpp and fills the arrayBag. Will verify each item
+		being added is indeed an int, and return false if there is a non-int in the input
+		file. If it succeeds in adding everything from the input stream, the function will
+		return true.
+
+		bool ArrayBag::isEmpy() const
+			Checks if itemCount is 0 and returns the result of it.
+
+		bool ArrayBag::add(const ItemType& newEntry)
+			Checks if there is room to add an item, and adds it if so. Returns whether
+			there was room to add the item or not.
+
+		bool ArrayBag::remove(const ItemType& anEntry)
+			Checks if a give item exists in the ArrayBag. If so, removes the item. Returns
+			whether there was an item that could be removed.
+
+		void ArrayBag::clear()
+			Sets the itemCount to 0. Does not remove the items from the ArrayBag, but
+			rather sets the state where new items would overwrite old ones.
+
+		int ArrayBag::getFrequencyOf(const itemType& anEntry) const
+			Returns the number of times an item exists in the ArrayBag. Possibly useful
+			with the overloaded - operator, however my implementation does not use it.
+
+		bool ArrayBag::contains(const itemType& anEntry) const
+			Calls the getIndexOf() function to check if an item exists.
+
+		int ArrayBag::getIndexOf(const ItemType& target) const
+			Returns the index of a given item in the ArrayBag. Note that if an item
+			exists more than once in an ArrayBag, this will only return the index of
+			the first occurrence.
+
+		void ArrayBag::printBag()
+			Assigns the array to a temporary vector. Since it's a member function, I
+			use 'this' in order to grab the pointer to the ArrayBag object.
+
+		ArrayBag operator +(ArrayBag& bagLeft,ArrayBag& bagRight)
+			Friend operator for ArrayBag (but not a member function), takes two ArrayBag
+			objects and combines them into a single ArrayBag while removing duplicates.
+			The original ArrayBag objects remain untouched.
+
+		ArrayBag operator -(ArrayBag& bagLeft,ArrayBag& bagRight)
+			Friend operator for ArrayBag, takes each unique element in ArrayBagLeft,
+			and then removes each element from the ArrayBagLeft that also exists in
+			ArrayBagRight. The original ArrayBag objects remain untouched.
+
+/------------------------------------------------------
+|	Limitations
+\------------------------------------------------------
+
+Only the first two lines of text are read from the setInput.txt file. If there are
+additional lines, they are ignored.
+
+There is no function to physically remove all items at once from the ArrayBag. the clear()
+function simply sets itemCount to 0 while leaving all stored values in the ArrayBag unchanged.
+Much like when a file is deleted from a computer, the contents are by default not actually
+removed, but the system simply marks the space as "free" and able to be written.
+
+The + and - operators may have a more efficient implementation than what I have. The number of
+cycles they take will be at most the total number of elements in both ArrayBags, including
+duplicates. (at least in terms of the for loops)
+
+While this is in a large sense what the vector class does, it still has a theoretical maximum
+size, effectively a specific amount of memory has been allocated in which the ArrayBag can
+store values. Anything above that would not succeed in adding.

@@ -1,0 +1,62 @@
+/------------------------------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  7
+|  Due Date  :  19 October 2017
+\------------------------------------------------------------------------------
+
+			Readme
+
+
+/------------------------------------------------------------------------------
+|	Description of the program
+\------------------------------------------------------------------------------
+
+	Read in a set of arrival and wait times for a bank teller, putting into a 
+	container with arrival and tender time, then sorting into a priority queue
+	based on arrival time.  Move the priority queue to a normal queue,
+	adjusting departure time based on what time the teller was available.
+	Then create a priority queue of events, with an identifier for arrival or
+	departure, sorting based on even time. Finally, print the event list.
+
+/-------------------------------------------------------------------------------
+|	Source Files
+\-------------------------------------------------------------------------------
+
+	Bank.h
+		Header file for the patron struct, overloaded comparison functions, and
+		the Bank class and its member function declarations.
+	
+	Bank.cpp
+		Implementation file for the Bank class.
+
+	main.cpp
+		Main program file. Creates the bank line and runs the member functions.
+
+/-------------------------------------------------------------------------------
+|	Program Status
+\-------------------------------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/-------------------------------------------------------------------------------
+|	Instructions
+\-------------------------------------------------------------------------------
+	
+	Unzip the WicklundHW7.zip file
+		$ unzip WicklundHW7.zip
+
+	cd into the WicklundHW7 directory
+		$ cd WicklundHW7
+
+	Make the program with the given makefile
+		$ make
+
+	Run the bank program
+		$ ./bank

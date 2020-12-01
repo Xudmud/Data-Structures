@@ -1,0 +1,12 @@
+Gregory Wicklund
+HW5 analysis.txt
+
+Asymptomic Analysis for specified functions and operators.
+
+insertAtFront()
+	f(1) + f(1) + f(1).
+	Big-O: 1 constant
+
+insertAtBack()
+	f(1) + f(1) + f(1) + f(1) + f(1) + f(3) + f(1) + f(n) + f(1) + f(1)
+	Big-O: n where n is the size of list

@@ -1,0 +1,72 @@
+/------------------------------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  6
+|  Due Date  :  5 October, 2017
+\------------------------------------------------------------------------------
+
+			Readme
+
+
+/------------------------------------------------------------------------------
+|	Description of the program
+\------------------------------------------------------------------------------
+
+Program to create a list of items of type DictEntry, containing a word and its
+(not implemented in this assignment) definition, and sort alphabetically based
+on words.
+Then, search that list of words based on a list of words in a second text file.
+Output how many iterations through the list it took going forwards and
+backwards.
+Lastly, write the list reverse-alphabetically to a new text file.
+
+
+/-------------------------------------------------------------------------------
+|	Source Files
+\-------------------------------------------------------------------------------
+
+DictEntry.h
+	Header file for the DictEntry class. Contains the variables, member
+	functions, and their implementations.
+
+dictionary.h
+	Heaer file for the dictionary class. Contains the definitions of functions
+	to search a list of type DictEntry.
+
+dictionary.cpp
+	Implementation file for the dictionary.h file
+
+main.cpp
+	Main program file. Creates a list of type DictEntry using the entries in
+	dictionary.txt, sorts it, and then searches it based on the items in
+	findwords.txt. Lastly, prints the list, reverse-alphabetically sorted, to
+	the file revsorted.txt
+
+/-------------------------------------------------------------------------------
+|	Program Status
+\-------------------------------------------------------------------------------
+	
+	Program developed using Visual Studio 2017
+	Program tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/-------------------------------------------------------------------------------
+|	Instructions
+\-------------------------------------------------------------------------------
+	
+Unzip the WicklundHW6.zip file
+	$ unzip WicklundHW6.zip
+
+cd into the WicklundHW6 directory
+	$ cd WicklundHW6
+
+Run make
+	$ make
+
+Run the compiled program "dictionary"
+	$ ./dictionary

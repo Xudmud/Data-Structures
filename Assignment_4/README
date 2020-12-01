@@ -1,0 +1,60 @@
+
+/------------------------------------------------------
+|  Name      :  Gregory Wicklund
+|  Student ID:  810906774
+|  Class     :  CSC 2421
+|  HW#       :  4
+|  Due Date  :  21 September, 2017
+\-----------------------------------------------------
+
+			Readme
+
+
+/-----------------------------------------------------
+|	Description of the program
+\-----------------------------------------------------
+
+	This program creates a dynamic array, and then demonstrates a push_back, pop_back, and search function
+	on that array.  The search will continue until the user decices to stop.
+
+	Asymptotic analysis of operator [], puch_back, pop_back, and search available in the "analysis.txt" file.
+
+/------------------------------------------------------
+|	Source Files
+\------------------------------------------------------
+
+	MyVector.h
+		Contains the definition, operator, and functions for the MyVector class.
+
+	MyVector.cpp
+		Contains the implementation of the overloaded operator [] and member functions for the MyVector class.
+
+	main.cpp
+		Contains code to demonstrate functionality of the functions and operator of the MyVector class.
+
+/------------------------------------------------------
+|	Program Status
+\------------------------------------------------------
+	
+	Program developed and tested on GNU g++ 5.4.0
+	Compiled and tested on:
+		Ubuntu on Windows Subsystem for Linux (WSL)
+		openSUSE on WSL.
+		csegrid
+	
+
+/------------------------------------------------------
+|	Instructions
+\------------------------------------------------------
+	
+	Unzip the file WicklundHW4.zip
+	$ unzip WicklundHW4.zip
+
+	cd into the WicklundHW4 director
+	$ cd WicklundHW4
+
+	Run make to create the binary
+	$ make
+
+	Run the program vector
+	$ ./vector

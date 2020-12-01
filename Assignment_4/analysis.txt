@@ -1,0 +1,20 @@
+Asymptomic Analysis for specified functions and operators.
+
+operator []
+	The if-statement will run exactly one time to ensure we aren't trying to read a outside the array. It then returns
+	the value at the specified index. The size of the array does not change the number of iterations.
+	f(1) + f(2) or f(1) + f(1) depending on what executes, so we would have O(3).
+
+pop_back()
+	The if-statement runs exactly one time.  If the array is empty, let the user know as such and do nothing. Otherwise,
+	decrement vsize by 1.
+	f(1) + f(2) or f(1) + f(1) depending on what executes: O(3).
+
+push_back()
+	Create a new vector of vsize+1 and copy the old vector over. Then add the new value to the end of the vector.
+	f(1) + f(1) + f(n) * f(1) + f(1) + f(1) + f(1): we would have O(n)
+
+search
+	For each entry in the array, check if the search term is equal to that entry.  Return the first index where the search term matches.
+	The if-statement runs once on each iteration, and only executes its code if a match is found.
+	f(n) * (f(1) + f(1)) + f(1): O(n)
